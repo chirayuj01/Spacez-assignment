@@ -2,6 +2,9 @@
 
 SpaceZ is a Flutter-based application designed to provide an engaging and interactive user experience. This project is structured to support multiple platforms, including Android, iOS, web, and desktop environments.
 
+![WhatsApp Image 2025-11-11 at 01 22 12_1ea0db3e](https://github.com/user-attachments/assets/10a21c17-4a5a-4a3f-a86c-42c2d480f6b8)
+
+
 ## Features
 - **Coupons Page**: View and manage coupons.
 - **Custom Widgets**: Includes reusable components like `CouponCard`, `CustomAppBar`, and `StickyBookingBar`.
