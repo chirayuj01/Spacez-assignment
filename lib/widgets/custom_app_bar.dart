@@ -14,7 +14,6 @@ class CustomAppBar extends StatelessWidget {
       title: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          // Use logo asset if available, otherwise fallback to text
           Row(
             children: [
               SizedBox(
@@ -23,7 +22,6 @@ class CustomAppBar extends StatelessWidget {
                   'assets/image/logo.png',
                   fit: BoxFit.contain,
                   errorBuilder: (context, error, stackTrace) {
-                    // Fallback when asset can't be loaded at runtime
                     return const Text('SPACEZ', style: TextStyle(fontWeight: FontWeight.w800, color: Color(0xFF4B4E4B)));
                   },
                 ),
@@ -49,13 +47,7 @@ class CustomAppBar extends StatelessWidget {
                   ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Back clicked')));
                   Navigator.of(context).maybePop();
                 },
-                child: const Padding(
-                  padding: EdgeInsets.all(4.0),
-                  child: Icon(Icons.arrow_back,color: Color(0xFF4B4E4B),size: 28,),
-                ),
               ),
-              const SizedBox(width: 8),
-              const Text(AppStrings.couponsTitle, style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700, color: Color(0xFF4B4E4B))),
             ],
           ),
         ),

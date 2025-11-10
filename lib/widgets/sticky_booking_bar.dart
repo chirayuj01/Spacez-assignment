@@ -12,7 +12,6 @@ class StickyBookingBar extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          // Green banner
           Container(
             color: AppColors.bannerGreen,
             padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
@@ -32,24 +31,19 @@ class StickyBookingBar extends StatelessWidget {
               ),
             ),
           ),
-
-          // White bottom area
           Expanded(
             child: Container(
               color: Colors.white,
               padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
               child: Row(
                 children: [
-                  // Price column - make flexible and avoid overflow using Wrap/Flexible
                   Expanded(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        // Price row
                         Row(
                           children: [
-                            // Left: price values - allow to take remaining space and shrink if needed
                             Row(
                               mainAxisSize: MainAxisSize.min,
                               children: [
@@ -73,7 +67,6 @@ class StickyBookingBar extends StatelessWidget {
 
                             const SizedBox(width: 8),
 
-                            // Right: short descriptor - constrain width so it cannot push other content
                             ConstrainedBox(
                               constraints: const BoxConstraints(maxWidth: 120),
                               child: const Text(
@@ -89,7 +82,6 @@ class StickyBookingBar extends StatelessWidget {
 
                         const SizedBox(height: 6),
 
-                        // Date & guests row
                         Row(
                           children: [
                             Text('24 Apr - 26 Apr | 8 guests', style: const TextStyle(color: AppColors.textGrey, fontSize: 12), overflow: TextOverflow.ellipsis),
@@ -106,7 +98,6 @@ class StickyBookingBar extends StatelessWidget {
                     ),
                   ),
 
-                  // Reserve button - ensure it doesn't overflow by using a fixed size and wrapping text
                   SizedBox(
                     width: 110,
                     height: 44,

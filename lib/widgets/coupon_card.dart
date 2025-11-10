@@ -28,22 +28,19 @@ class CouponCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final screenHeight = MediaQuery.of(context).size.height;
-    // increase default card height so coupons look taller like the image
     final cardHeight = min(180.0, max(130.0, screenHeight * 0.18));
-    // number of lines for description based on height
     final descMaxLines = cardHeight > 150 ? 5 : 4;
 
     return Container(
-      // subtle light pink background for the whole card area
       decoration: BoxDecoration(
-        color: AppColors.primaryBrown, // light pink
+        color: AppColors.primaryBrown,
         borderRadius: BorderRadius.circular(8),
         boxShadow: [
           BoxShadow(
             color: Colors.grey.withOpacity(0.3),
             spreadRadius: 1,
             blurRadius: 5,
-            offset: const Offset(0, 2), // changes position of shadow
+            offset: const Offset(0, 2),
           ),
         ],
       ),

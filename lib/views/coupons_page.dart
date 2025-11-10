@@ -33,30 +33,10 @@ class _CouponsPageState extends State<CouponsPage> {
       ),
       body: Stack(
         children: [
-          // Main scrollable content
           ListView(
             padding: EdgeInsets.fromLTRB(16, 12, 16, listBottomPadding),
             children: [
               const SizedBox(height: 8),
-
-              // General coupons
-              for (final c in coupons)
-                Padding(
-                  padding: const EdgeInsets.only(bottom: 12.0),
-                  child: CouponCard(
-                    coupon: c,
-                    onApply: () {
-                      final msg = widget.viewModel.applyCoupon(c.id);
-                      _showMessage(msg);
-                    },
-                  ),
-                ),
-
-              const SizedBox(height: 8),
-              const Text(AppStrings.paymentOffers, style: TextStyle(fontWeight: FontWeight.w700, fontSize: 16)),
-              const SizedBox(height: 12),
-
-              // Payment offers (reuse same mock data)
               for (final c in coupons)
                 Padding(
                   padding: const EdgeInsets.only(bottom: 12.0),
@@ -70,23 +50,12 @@ class _CouponsPageState extends State<CouponsPage> {
                 ),
             ],
           ),
-
-          // Positioned sticky booking bar overlay
           Positioned(
+            bottom: 0,
             left: 0,
             right: 0,
-            bottom: 0,
-            child: SafeArea(
-              top: false,
-              child: SizedBox(
-                height: bottomBarHeight,
-                child: StickyBookingBar(
-                  onReserve: () {
-                    final msg = widget.viewModel.reserve();
-                    _showMessage(msg);
-                  },
-                ),
-              ),
+            child: StickyBookingBar(
+              onReserve: () => _showMessage('Reserve clicked!'),
             ),
           ),
         ],
